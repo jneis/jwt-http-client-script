@@ -1,0 +1,35 @@
+plugins {
+    id 'groovy'
+    id 'idea'
+    id 'org.springframework.boot' version '2.0.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/milestone'
+    }
+}
+
+project.with {
+    group = 'io.townsq'
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+    }
+}
+
+dependencies {
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'com.auth0', name: 'java-jwt', version: '3.2.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.2.RELEASE'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+}
+
+springBoot {
+    mainClassName = 'io.townsq.api.gateway.App'
+}
+

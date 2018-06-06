@@ -1,0 +1,17 @@
+# Idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+build/
+out/
+.gradle/
+
+# MacOS
+.DS_Store
+
+# RSA Keys
+*.der
+*.pem
