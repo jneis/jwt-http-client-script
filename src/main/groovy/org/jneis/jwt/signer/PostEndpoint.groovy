@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
 
 @RestController
-@RequestMapping('/get')
+@RequestMapping('/post')
 class PostEndpoint {
 
     @Autowired
@@ -23,7 +23,7 @@ class PostEndpoint {
     PrivateKeyProvider keys
 
     @PostMapping
-    Response get(@RequestBody Request request) {
+    Response post(@RequestBody Request request) {
         def jwt = JWT.create()
                 .withKeyId(keys.kid)
                 .withClaim('path', request.path)
