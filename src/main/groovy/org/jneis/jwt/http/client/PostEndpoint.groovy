@@ -8,11 +8,13 @@ import org.springframework.http.RequestEntity
 import org.springframework.util.LinkedMultiValueMap
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
 
 @RestController
-class RequestEndpoint {
+@RequestMapping('/get')
+class PostEndpoint {
 
     @Autowired
     RestTemplate template
@@ -20,7 +22,7 @@ class RequestEndpoint {
     @Autowired
     PrivateKeyProvider keys
 
-    @PostMapping('/get')
+    @PostMapping
     Response get(@RequestBody Request request) {
         def jwt = JWT.create()
                 .withKeyId(keys.kid)
@@ -36,7 +38,7 @@ class RequestEndpoint {
         headers.add('Authorization', 'Bearer ' + jwt)
 
         def uri = new URI(request.url)
-        def requestEntity = new RequestEntity(headers, HttpMethod.GET, uri)
+        def requestEntity = new RequestEntity(request.body, headers, HttpMethod.POST, uri)
         def responseEntity = template.exchange(requestEntity, String)
         def status = responseEntity.statusCode
         def responseHeaders = new LinkedHashMap()
