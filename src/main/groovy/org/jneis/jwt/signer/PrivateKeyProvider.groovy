@@ -1,4 +1,4 @@
-package org.jneis.jwt.http.client
+package org.jneis.jwt.signer
 
 import com.auth0.jwt.interfaces.RSAKeyProvider
 import java.nio.file.Files

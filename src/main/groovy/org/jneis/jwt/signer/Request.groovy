@@ -1,4 +1,4 @@
-package org.jneis.jwt.http.client
+package org.jneis.jwt.signer
 
 class Request {
     Map<String, String> headers

@@ -1,4 +1,4 @@
-package org.jneis.jwt.http.client
+package org.jneis.jwt.signer
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

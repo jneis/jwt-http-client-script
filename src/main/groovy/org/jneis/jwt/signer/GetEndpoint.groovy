@@ -1,4 +1,4 @@
-package org.jneis.jwt.http.client
+package org.jneis.jwt.signer
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm

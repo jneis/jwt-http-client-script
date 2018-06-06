@@ -30,6 +30,6 @@ dependencies {
 }
 
 springBoot {
-    mainClassName = 'io.townsq.api.gateway.App'
+    mainClassName = 'org.jneis.jwt.signer.App'
 }
 
